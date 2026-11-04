@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ecebe5"><title>Pocket World — 僕の部屋</title><meta name="description" content="自分の部屋とキャンパスを探索する、小さな3Dポートフォリオ。本や机から、制作の記録をめくる。"><link rel="stylesheet" href="style.css"></head>
+<body>
+<canvas id="world" aria-label="ドラッグで回転できる部屋の3D模型"></canvas>
+<header><a class="brand" href="./" aria-label="ホーム"><span class="mark">p<span>w</span></span><span>Pocket World<small>A PERSONAL WORLD</small></span></a><nav class="scene-switch" aria-label="場所の切り替え"><a href="?scene=room" id="room-scene">自分の部屋</a><a href="?scene=campus" id="campus-scene">西早稲田キャンパス</a></nav><div class="place"><span class="live"></span> <span id="place-name">僕の部屋</span><span class="divider">/</span><span id="clock">14:30</span></div><button class="pill" id="about">この場所について <span>↗</span></button></header>
+<main><section class="intro"><div class="eyebrow" id="chapter">CHAPTER 01 <span>—</span> MY ROOM</div><h1>いつもの場所に、<br>つくったものを。</h1><p id="intro-copy">窓辺の机と、つくる日々。<br>本やPCから、のぞいてみてください。</p><span class="edition" id="edition">一枚の写真から、小さな部屋へ。</span></section>
+<div id="labels" aria-label="展示スポット"></div>
+<div class="view-tools" aria-label="表示操作"><button id="day" aria-label="夕方に切り替え" title="時間帯を切り替え">☀</button><span></span><button id="zoom-in" aria-label="拡大">＋</button><button id="zoom-out" aria-label="縮小">−</button><span></span><button id="reset" aria-label="全体表示に戻る" title="全体表示">⌂</button></div>
+<div class="compass" aria-hidden="true"><span id="compass-caption">VIEW</span><div id="needle">↑</div><small id="compass-note">A LITTLE PLACE OF MY OWN</small></div>
+<section class="tour"><span class="tour-icon">⌘</span><div><span class="eyebrow">START EXPLORING</span><p id="tour-copy">本棚から、はじめよう。</p></div><button id="tour" aria-label="最初の展示スポットへ">↗</button></section>
+<aside id="panel" aria-labelledby="panel-title" hidden><button class="close" id="close-panel" aria-label="展示を閉じる">×</button><div class="eyebrow" id="panel-kicker"></div><h2 id="panel-title"></h2><p id="panel-copy"></p><div class="shelf" id="shelf" aria-label="作品の本棚"></div><p class="shelf-hint">本を選んで、記録をひらく ↗</p><div class="panel-note"><span class="live"></span> CONTENT PREVIEW<span>サンプル展示</span></div></aside>
+<div id="fallback" hidden><p>3D表示を開始できませんでした。<br>下の「展示スポット」から作品棚をご覧ください。</p></div>
+</main>
+<footer><div class="controls-hint"><span>↔</span> ドラッグで回転 <i></i><span>⊕</span> スクロールでズーム</div><button id="locations">展示スポット <span>03</span> ↑</button><div class="footnote" id="model-note">写真をもとにしたコンセプトモデル</div></footer>
+<dialog id="details"><button class="close" id="close-details" aria-label="閉じる">×</button><div id="detail-content"></div></dialog>
+<dialog id="location-dialog"><button class="close" id="close-locations" aria-label="閉じる">×</button><div class="eyebrow">PLACES TO EXPLORE</div><h2>どこへ行こう？</h2><div id="location-list"></div></dialog>
+<div class="loading" id="loading"><span class="mark">p<span>w</span></span><p>小さな世界を準備しています</p></div>
+<script type="module" src="app.js"></script></body></html>
